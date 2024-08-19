@@ -7,7 +7,6 @@ if (!defined('ABSPATH')) {
 
 //get option value
 $lazy_load_images = get_option($this->get_prefix() . 'lazy_load_images');
-var_dump($lazy_load_images);
 
 ?>
 

@@ -61,8 +61,8 @@ class JGWPSiteBoostSettings extends PluginFeature {
     // Define the add_settings_page method
     public function add_settings_page() {
         add_menu_page(
-            'Site Boost Settings', // Page title
-            'Boost Settings',      // Menu title
+            'JG Site Boost Settings', // Page title
+            'JG Boost Settings',      // Menu title
             'manage_options',      // Capability
             'jg-wp-site-boost-settings', // Menu slug
             array($this, 'settings_page_callback'), // Callback function
