@@ -16,5 +16,6 @@ $lazy_load_images = get_option($this->get_prefix() . 'lazy_load_images');
         name="<?php echo $this->get_prefix() ?>lazy_load_images"
         value="1"
         <?php checked($lazy_load_images) ?>
+        title="Enable lazy loading images in post and page bodies."
     >
 </div>
