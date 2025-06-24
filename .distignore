@@ -1,0 +1,5 @@
+scoper.inc.php
+.git/*
+.git
+.gitignore
+build/*
