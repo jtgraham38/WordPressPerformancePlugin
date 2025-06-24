@@ -32,11 +32,11 @@ $plugin = new Plugin("jg_wp_siteboost_", plugin_dir_path( __FILE__ ), plugin_dir
 //register features with the plugin manager here...
 require_once plugin_dir_path(__FILE__) . 'features/settings/settings.php';
 $feature = new JGWPSiteBoostSettings($plugin);
-$plugin->register_feature($feature);
+$plugin->register_feature('settings', $feature);
 
 require_once plugin_dir_path(__FILE__) . 'features/lazy_load_images/lazy_load_images.php';
 $feature = new JGWPLazyLoadImages($plugin);
-$plugin->register_feature($feature);
+$plugin->register_feature('lazy_load_images', $feature);
 
 //init the plugin
 $plugin->init();

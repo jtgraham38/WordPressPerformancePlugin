@@ -35,7 +35,7 @@ class JGWPSiteBoostSettings extends PluginFeature {
 
         // create the settings fields
         add_settings_field(
-            $this->get_prefix() . "lazy_load_images",    // id of the field
+            $this->prefixed('lazy_load_images'),    // id of the field
             'Lazy Load Images',   // title
             function(){ // callback
                 require_once plugin_dir_path(__FILE__) . 'elements/lazy_load_body_images_input.php';
@@ -47,7 +47,7 @@ class JGWPSiteBoostSettings extends PluginFeature {
         // create the settings themselves
         register_setting(
             'jg_wp_siteboost_settings', // option group
-            $this->get_prefix() . 'lazy_load_images',    // option name
+            $this->prefixed('lazy_load_images'),    // option name
             array(  // args
                 'type' => 'boolean',
                 'default' => false,
@@ -60,14 +60,13 @@ class JGWPSiteBoostSettings extends PluginFeature {
 
     // Define the add_settings_page method
     public function add_settings_page() {
-        add_menu_page(
+        add_submenu_page(
+            'tools.php', // Parent slug (Tools page)
             'JG Site Boost Settings', // Page title
-            'JG Boost Settings',      // Menu title
+            'JG Site Boost Settings',      // Menu title
             'manage_options',      // Capability
             'jg-wp-site-boost-settings', // Menu slug
-            array($this, 'settings_page_callback'), // Callback function
-            'dashicons-admin-generic', // Icon URL (use a Dashicon)
-            20 // Position
+            array($this, 'settings_page_callback') // Callback function
         );
     }
 

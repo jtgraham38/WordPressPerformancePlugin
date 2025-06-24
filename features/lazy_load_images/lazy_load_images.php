@@ -23,7 +23,7 @@ class JGWPLazyLoadImages extends PluginFeature {
     //add lazy loading to images if the setting is set
     public function add_lazy_loading($content){
         //check if lazy loading is enabled
-        $lazy_load_images = get_option($this->get_prefix() . 'lazy_load_images');
+        $lazy_load_images = get_option($this->prefixed('lazy_load_images'));
 
         //if lazy loading is enabled, add the lazy loading attribute to images
         if ($lazy_load_images){
